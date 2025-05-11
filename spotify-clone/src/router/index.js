@@ -9,6 +9,8 @@ import CategoryView from '../views/CategoryView.vue'
 import PlaylistView from '../views/PlaylistView.vue'
 import TrackView from '../views/TrackView.vue'
 import ArtistView from '../views/ArtistView.vue'
+import LikedSongsView from '../views/LikedSongsView.vue'
+import CreatePlaylistView from '../views/CreatePlaylistView.vue'
 import { useAuthStore } from '../stores/auth'
 import { getStoredToken } from '../services/spotifyAuth'  // Correct import
 
@@ -74,7 +76,19 @@ const router = createRouter({
       name: 'track',
       component: TrackView,
       meta: { requiresAuth: true }
-}
+    },
+    {
+      path: '/liked',
+      name: 'liked',
+      component: LikedSongsView,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/create-playlist',
+      name: 'create-playlist',
+      component: CreatePlaylistView,
+      meta: { requiresAuth: true }
+    }
   ]
 })
 
